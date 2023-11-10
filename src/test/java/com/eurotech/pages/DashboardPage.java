@@ -1,0 +1,46 @@
+package com.eurotech.pages;
+
+import com.eurotech.utilities.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+public class DashboardPage extends BasePage{
+
+    @FindBy(id = "dashboard-h1")
+    public WebElement dashboardText;
+
+    @FindBy(id = "dashboard-p1")
+    public WebElement welcomeText;
+
+    @FindBy(className = "nav__menu-item")
+    public List<WebElement> menuList;
+
+    @FindBy(css = ".btn.btn-light")
+    public List<WebElement> dashboardList;
+
+    @FindBy(xpath = "(//tbody)[1]/tr[1]/td[2]")
+    public WebElement jobTitle;
+
+    @FindBy(id = "navbar-menu-list2-item3-text")
+    public WebElement hoverMyAccount;
+
+    /**same locator type with base menu so we can use navigateToMenu
+    public void dashboardMenu(String menuName) {
+        Driver.get().findElement(By.xpath("//*[text()='" + menuName + "']")).click();
+    }
+     */
+    public String getTitle(String title){
+        return Driver.get().findElement(By.xpath("//td[text()='"+title+"']")).getText();
+
+    }
+    public String getCompany(String company){
+        return Driver.get().findElement(By.xpath("//td[text()='"+company+"']")).getText();
+    }
+    public String getTextCommon(String element){
+        return Driver.get().findElement(By.xpath("//td[text()='"+element+"']")).getText();
+
+    }
+}
