@@ -1,4 +1,4 @@
-@navigationMenu
+@navigationMenu @regression
 Feature: Navigation Menu Task
 
   Scenario: Navigation to Developers Menu
@@ -7,7 +7,7 @@ Feature: Navigation Menu Task
     Then The user should be able to see welcome message
     When The user navigate to Developer Menu
     Then The user able to see developer text
-
+    @db
     Scenario: Navigation to All Post Menu
       Given The user is on the login page
       When The user enters student credentials

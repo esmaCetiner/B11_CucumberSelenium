@@ -27,6 +27,9 @@ public class DashboardPage extends BasePage{
     @FindBy(id = "navbar-menu-list2-item3-text")
     public WebElement hoverMyAccount;
 
+    @FindBy(css = ".btn.btn-light") //#dashboard-edit-container>a
+    public List<WebElement> dashboardEditList;
+
     /**same locator type with base menu so we can use navigateToMenu
     public void dashboardMenu(String menuName) {
         Driver.get().findElement(By.xpath("//*[text()='" + menuName + "']")).click();

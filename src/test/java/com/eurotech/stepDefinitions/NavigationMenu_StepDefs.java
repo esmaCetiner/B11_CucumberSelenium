@@ -51,4 +51,11 @@ public class NavigationMenu_StepDefs {
 
     }
 
+    @Then("The user should be able to see header as {string}")
+    public void theUserShouldBeAbleToSeeHeaderAs(String arg0) {
+    }
+
+    @When("The user navigates to {string} menu")
+    public void theUserNavigatesToMenu(String arg0) {
+    }
 }
