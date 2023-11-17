@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/eurotech/stepDefinitions",
-        dryRun = false,
-        tags = "@ddf_test"
+        dryRun =false,
+        tags = "@edit_with_DT"
 )
 public class CukesRunner {
 }

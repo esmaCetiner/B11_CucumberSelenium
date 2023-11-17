@@ -7,6 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Map;
@@ -15,6 +18,9 @@ public abstract class BasePage {
 
     public BasePage() {
         PageFactory.initElements(Driver.get(),this); }
+
+    WebDriverWait wait=new WebDriverWait(Driver.get(),10);
+
 
       // abstract yapmamaizin nedeni bu classtan bir obje olusturmayacak olmamaiz
       // fakat BasePage icerisinde locate edecegimiz web elementleri veya metotlari diger loginPage veya DasboardPage üzerinden obje olustutrarak cagirabilecegiz
@@ -50,6 +56,11 @@ public abstract class BasePage {
             List<Map<String,String>> dataList=excelUtil.getDataList();
             return dataList;
         }
-
+    public void click(WebElement element){
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    }
+    public void click(By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+    }
 
 }
