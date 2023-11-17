@@ -36,27 +36,27 @@ public class EditProfile_StepDefs {
     }
     @Then("The user verifies that profile info has been successfully updated")
     public void the_user_verifies_that_profile_info_has_been_successfully_updated() {
-        Assert.assertTrue(editProfilPage.profileUpdatedMessage.isDisplayed());
+        Assert.assertTrue(editProfilPage.profileUpdateMessage.isDisplayed());
     }
     @When("The user add following information into related inputBox")
-    public void the_user_add_following_information_into_related_input_box(List<Map<String,String>> dataTable) {
+    public void the_user_add_following_information_into_related_input_box(List <Map<String,String>> dataTable) {
         System.out.println("dataTable.size() = " + dataTable.size());
-        for (int i = 0; i < dataTable.size(); i++) {
+        for (int i = 0; i <dataTable.size() ; i++) {
             System.out.println("i = " + i);
             System.out.println("dataTable.get(i).values() = " + dataTable.get(i).values());
-            String [] dataArray=dataTable.get(i).values().toArray(new String[2]);
+            String [] dataArray=dataTable.get(i).values().toArray(new String[i]);
 
-                if (dataArray.length>=2){
-                    String firstElement=dataArray[0];
-                    String secondElement=dataArray[1];
-                    System.out.println("firstElement = " + firstElement);
-                    System.out.println("secondElement = " + secondElement);
-                    editProfilPage.addInfo(firstElement,secondElement);
-                }else{
-                    System.out.println("There is not enough element value");
-
+            if(dataArray.length>=2){
+                String firstElement=dataArray[0];
+                String secondElement=dataArray[1];
+                System.out.println("firstElement = " + firstElement);
+                System.out.println("secondElement = " + secondElement);
+                editProfilPage.addInfo(firstElement,secondElement);
+            }else {
+                System.out.println("There is not enough element value");
             }
         }
     }
 
 }
+

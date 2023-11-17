@@ -22,8 +22,8 @@ public class EditProfilPage extends BasePage{
     @FindBy(id = "editprofile-from-addsocial-btn")
     public WebElement editProfileSubmitBtn;
 
-    @FindBy(xpath = "//*[.=''Profile Updated]")
-    public WebElement profileUpdatedMessage;
+    @FindBy(xpath = "//*[.='Profile Updated']")
+    public WebElement profileUpdateMessage;
 
 
     public void selectMenu(WebElement element,String status){

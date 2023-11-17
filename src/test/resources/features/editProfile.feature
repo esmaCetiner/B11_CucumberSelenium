@@ -31,9 +31,11 @@ Feature: The user should be able to edit profile information
     And The user add "githubusername" "<github>"
     And The user add "bio" "<bio>"
     And The user clicks on the submit button
+    Then The user verifies that profile info has been successfully updated
     Examples:
       | email                  | password | subMenu      | status                | num | company  | website                        | location | skills                 | github      | bio                             |
       | sdetb11@eurotech.study | Test1234 | Edit Profile | Instructor or Teacher | 3   | Eurotech | https://www.eurotechstudy.com/ | Berlin   | Java,Selenium,Cucumber | sdetb11test | I want to be an SDET instructor |
+
   @edit_with_DT
   Scenario Outline: edit profile with scenario outline
     When The user logs in using "<email>" and "<password>"
@@ -41,6 +43,7 @@ Feature: The user should be able to edit profile information
     And The user select status "<status>"
     And The user slides the slider <num>
     And The user add following information into related inputBox
+      | firstColumn    | secondColumn     |
       | company        | <company>        |
       | website        | <website>        |
       | location       | <location>       |
