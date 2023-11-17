@@ -5,15 +5,22 @@ import com.eurotech.pages.LoginPage;
 import com.eurotech.utilities.BrowserUtils;
 import com.eurotech.utilities.ConfigurationReader;
 import com.eurotech.utilities.Driver;
+import com.eurotech.utilities.ExcelUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.List;
+import java.util.Map;
+
 public class Login_StepDefs {
 
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();
+
+//   ExcelUtil excelUtil=new ExcelUtil("src/test/resources/Batch11_DevEx.xlsx","Test Data");
+//   List<Map<String,String>> dataList=excelUtil.getDataList();
 
     @Given("The user is on the login page")
     public void the_user_is_on_the_login_page() {
@@ -74,4 +81,19 @@ public class Login_StepDefs {
         String actualMessage = loginPage.getDisappearingWarningMessage(expectedMessage);
         Assert.assertEquals(expectedMessage, actualMessage);
     }
+    @When("The user enters {string} and row number {int}")
+    public void the_user_enters_and_row_number(String sheetName, int rowNum) {
+//        ExcelUtil excelUtil=new ExcelUtil("src/test/resources/Batch11_DevEx.xlsx",sheetName);
+//        List<Map<String, String>> dataList = excelUtil.getDataList();
+//        loginPage.login(dataList.get(0).get("Username"),dataList.get(0).get("Password"));
+//        loginPage.login(dataList.get(rowNum).get("Username"),dataList.get(rowNum).get("Password"));
+        loginPage.login(loginPage.getDataList(sheetName).get(rowNum).get("Username"),loginPage.getDataList(sheetName).get(rowNum).get("Password"));
+    }
+    @Then("The user verifies that welcome message contains in excel {string} {int}")
+    public void the_user_verifies_that_welcome_message_contains_in_excel(String sheetName,int rowNumForName ) {
+        String actualMessage=dashboardPage.welcomeText.getText();
+//        Assert.assertTrue(actualMessage.contains(dataList.get(rowNumForName).get("Name")));
+        Assert.assertTrue(actualMessage.contains(loginPage.getDataList(sheetName).get(rowNumForName).get("Name")));
+    }
+
 }

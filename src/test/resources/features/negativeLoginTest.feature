@@ -1,4 +1,4 @@
-@wip
+
 Feature: Negative Login Test
 
   Background:
