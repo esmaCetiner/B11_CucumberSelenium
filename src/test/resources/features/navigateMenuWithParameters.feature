@@ -30,7 +30,7 @@ Feature: Navigate to Menu with Parameters
     When The user navigates to "Developers" menu
     Then The user should be able to see header as "Filter Profiles by Skill or by Location"
 
-
+  @parallelExecution
   Scenario Outline: Different user navigates different menu
     When The user logs in using "<userType>" and "<password>"
     Then The welcome message contains "<name>"

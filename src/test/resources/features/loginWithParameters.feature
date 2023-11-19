@@ -8,7 +8,7 @@ Feature: Log in as different user
     Then The user should be able to login
     And The welcome message contains "Teacher"
 
-
+  @parallelExecution
   Scenario: Log in as Student with parameters
     Given The user is on the login page
     When The user logs in using "sdetb11@eurotech.study" and "Test1234"
