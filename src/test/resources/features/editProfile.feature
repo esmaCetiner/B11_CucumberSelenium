@@ -1,4 +1,4 @@
-@wip
+
 Feature: The user should be able to edit profile information
 
   Background:

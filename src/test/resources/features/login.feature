@@ -24,18 +24,6 @@ Feature: DevEx log in test
     When The user enters developer credentials
     Then The user should be able to login
 
-  @sdet @smoke
-  Scenario: Log in as a SDET
-    Given The user is on the login page
-    When The user enters SDET credentials
-    Then The user should be able to login
-
-  @test @smoke
-  Scenario: Log in as a test
-    Given The user is on the login page
-    When The user enters test credentials
-    Then The user should be able to login
-
 
    # -Write scenarios in navigationMenu.feature
   #-Create step definitions
