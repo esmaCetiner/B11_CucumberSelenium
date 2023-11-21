@@ -21,8 +21,8 @@ public class EditProfile_StepDefs {
         editProfilPage.slider(num);
     }
     @When("The user add {string} {string}")
-    public void the_user_add(String inputBoxNmae, String userInfo) {
-        editProfilPage.addInfo(inputBoxNmae, userInfo);
+    public void the_user_add(String inputBoxName, String userInfo) {
+        editProfilPage.addInfo(inputBoxName, userInfo);
     }
     @When("The user clicks on the submit button")
     public void the_user_clicks_on_the_submit_button() {

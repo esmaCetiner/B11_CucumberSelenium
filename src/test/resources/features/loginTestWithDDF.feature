@@ -14,4 +14,4 @@ Feature: Data Driven Testing in Cucumber
       | Test Data | 4         | Company   |
       | Test Data | 5         | Title     |
       | Test Data | 6         | Company   |
-      | Test Data | 7         | Title     |
+      | Test Data | 7          | Title     |
