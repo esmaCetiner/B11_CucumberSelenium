@@ -1,6 +1,6 @@
 @navigationMenu @regression
 Feature: Navigation Menu Task
-  @db
+
   Scenario: Navigation to Developers Menu
     Given The user is on the login page
     When The user enters developer credentials

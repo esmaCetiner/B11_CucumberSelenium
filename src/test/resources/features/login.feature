@@ -18,7 +18,7 @@ Feature: DevEx log in test
     When The user enters student credentials
     Then The user should be able to login
 
-  @developer @db #Log in as a developer
+  @developer  #Log in as a developer
   Scenario: Log in as a developer
     Given The user is on the login page
     When The user enters developer credentials

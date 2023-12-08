@@ -1,6 +1,7 @@
 package com.eurotech.stepDefinitions;
 
 import com.eurotech.utilities.BrowserUtils;
+import com.eurotech.utilities.DBUtils;
 import com.eurotech.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -30,10 +31,12 @@ public class Hooks {
     @Before("@db")
     public void setUpDB(){
        // System.out.println("\tConnecting DB");
+        DBUtils.createConnection();
     }
     @After("@db")
     public void tearDownDB(){
         //System.out.println("\tDisconnecting DB");
+        DBUtils.destroy();
     }
 
 }
