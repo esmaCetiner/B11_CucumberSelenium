@@ -14,9 +14,12 @@ public class Driver {
     private Driver(){}
 
     private static WebDriver driver;
+  
 
     public static WebDriver get() {
-        String browser = ConfigurationReader.get("browser");
+        //String browser = ConfigurationReader.get("browser");  
+        System.out.println("Driver - System BROWSER is :" + System.getProperty("browser"));
+        String browser = System.getProperty("browser") != null ? System.getProperty("browser") : ConfigurationReader.get("browser");
 
         if (driver == null) {
             switch (browser.toLowerCase()) {
